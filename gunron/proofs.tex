@@ -9,7 +9,6 @@
 
 \begin{document}
 
-\newenvironment{proof}{\bgroup \egroup}
 
 \begin{CJK}{UTF8}{min}
 
@@ -18,7 +17,7 @@
 \section{巡回群}
 
 \begin{question}
-\paragraph{1.1}
+\paragraph{2.4.2}
 \textit{
 \textbf{巡回群の部分群はまた巡回群になる。}
 }
@@ -41,8 +40,23 @@ $$\mdblksquare$$
 
 \end{proof}
 
+\section{同型}
+\begin{question}
+\paragraph{2.7.1, pg40}
+\textit{
+\textbf{群Gの自己同型の全体が群をつくることを証明せよ。}
+}
+\end{question}
+\\\\
+\begin{proof}
 
+証明：
 
+背景知識として以下のようなことがわかる：
+\\\\
+群Gの上の１対１の変換$\sigma$が、その乗法を不変するということは、Gの任意の元a,bに対して$ ab = c$ならば$a^{\sigma}b^{\sigma} = c^{\sigma}$、すなわち、$a^{\sigma}b^{\sigma} = (ab)^{\sigma}$となることで、$\sigma$がGからG自身への同型写像であることにほかならない。このような$\sigma$を群Gの自己同型という。
+
+\end{proof}
 
 \end{CJK}
 
