@@ -3,6 +3,23 @@
 \usepackage{CJKutf8}
 \usepackage{stix}
 
+\newenvironment{question}
+    {\begin{center}
+        \begin{tabular}{|p{0.9\textwidth}|}
+        \hline\\
+    }
+    { 
+    \\\\\hline
+    \end{tabular} 
+    \end{center}
+    }
+%
+\newenvironment{proof}
+%
+
+    
+
+
 \title{群論}
 \author{Lexington Whalen}
 \date{January 2023}
@@ -12,49 +29,40 @@
 
 \begin{CJK}{UTF8}{min}
 
+
 \maketitle
 
-\section{巡回群}
+\section{集合と写像}
+
+\textit{特に斬新なことは書かれていませんでした。集合論をある程度知っている方にとってはこれはおそらく読み飛ばしても大丈夫だと思います。}
+
+\section{群の概念}
+
+\paragraph{2.1群の定義}
 
 \begin{question}
-\paragraph{2.4.2}
-\textit{
-\textbf{巡回群の部分群はまた巡回群になる。}
-}
+例題１：群Gにおいて、$aa=a$ならば、$a=e$(単位元）である。また、$ab=e$ならば、$b=a^{-1}, a=b^{-1}$である。
 \end{question}
-\\\\
+
 \begin{proof}
-Gを元gによって生成された巡回群とし、HをGの任意の部分群とする。\\\\
-もし$H = \langle e \rangle$であれば、Hは元eによって生成された巡回群となるので、この場合では主張は正しい。\\\\
-$H \neq \langle e \rangle$の場合を考えましょう。その時、Hの任意の元ｈを取り、そのｈを$h = g^{k}$と表すことができる。ここでkを$h = g^{k} \in H$となる最小の自然数とする。我々が目指しているのは$\langle g^{k} \rangle = H$であることを証明すること。\\\\
-
-Hは群なので、$\langle a^{k} \rangle \subset H$である。次に、Hの任意の元$b = g^{i}$を取る。割り算の定義により、\\
-$$ i = kq + r,  0 \leq r < m, q,r \in \mathbb{Z} $$
-となる。これを踏まえて、次のように書くこともできる：\\
-$$ a^{i} = a^{kq+r}, a^{r} = a^{i} \times (a^{k})^{-q} $$
-ここでｋは$a^{k}$となる最小の自然数であったので、$r=0$が言える。
-
-よって、$\langle a^{k} \rangle = H$となる。
-
-$$\mdblksquare$$
-
+ 証明：$aa=a$ならば、両辺に$a^{-1}$を右からかけると$aa\times a^{-1} = a\times a^{-1}$となり$a=e$となります。また、$ab=e$ならば,両辺に$a^{-1}$を左からかけると$a^{-1}\times ab = a^{-1}\times e$となり$eb=a^{1}$となります。もっと整えると求めている$b=a^{-1}$となります。
+\qedsymbol{$\blacksquare$}
 \end{proof}
 
-\section{同型}
+\paragraph{2.4部分群\\\\}
+
+
+群Gの部分集合Hが次の2つの条件を満たすとき、これをGの部分群という：
+$$ i) a, b \in H \Righarrow ab \in H$$
+$$ ii) a \in H \Rightarrow a^{-1} \in H $$
+
+
 \begin{question}
-\paragraph{2.7.1, pg40}
-\textit{
-\textbf{群Gの自己同型の全体が群をつくることを証明せよ。}
-}
+例題１：群Gの部分群であるHがGの部分群であるため必要十分な条件は
+$$ iii) a,b \in H \Rightarrow ab^{-1} \in H $$
 \end{question}
-\\\\
+
 \begin{proof}
-
-証明：
-
-背景知識として以下のようなことがわかる：
-\\\\
-群Gの上の１対１の変換$\sigma$が、その乗法を不変するということは、Gの任意の元a,bに対して$ ab = c$ならば$a^{\sigma}b^{\sigma} = c^{\sigma}$、すなわち、$a^{\sigma}b^{\sigma} = (ab)^{\sigma}$となることで、$\sigma$がGからG自身への同型写像であることにほかならない。このような$\sigma$を群Gの自己同型という。
 
 \end{proof}
 
